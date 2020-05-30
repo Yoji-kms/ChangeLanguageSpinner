@@ -22,14 +22,13 @@ public class MainActivity extends AppCompatActivity {
     private final String LOCALE_KEY = "locale_key";
     private Locale locale;
     private String chosenLocale;
-    private boolean spinnerLanguageSetFlag = false;
 
     private AdapterView.OnItemSelectedListener langSpinnerOnItemClickListener = new AdapterView.OnItemSelectedListener() {
         @Override
         public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
             switch (position) {
                 case Language.RUSSIAN:
-                    chosenLocale ="ru";
+                    chosenLocale = "ru";
                     break;
                 case Language.ENGLISH:
                     chosenLocale = "en";
@@ -87,9 +86,7 @@ public class MainActivity extends AppCompatActivity {
 
         langSpinner.setAdapter(langSpinnerAdapter);
         langSpinner.setOnItemSelectedListener(langSpinnerOnItemClickListener);
-        if (!spinnerLanguageSetFlag) {
-            setLangSpinnerItem();
-        }
+        setLangSpinnerItem();
         okButton.setOnClickListener(okBtnOnClickListener);
     }
 
@@ -125,7 +122,6 @@ public class MainActivity extends AppCompatActivity {
         if (!currentLocale.equals(langSharedPrefs.getString(LOCALE_KEY, ""))) {
             Configuration config = new Configuration();
             config.setLocale(locale);
-            spinnerLanguageSetFlag = true;
             getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
             recreate();
         }

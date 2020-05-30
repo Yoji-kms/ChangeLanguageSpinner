@@ -2,4 +2,11 @@
 <resources>
     <string name="app_name">Sprache ändern Spinner</string>
     <string name="hello_world">Hallo Welt!</string>
+    <string-array name="language_array">
+        <item>Russisch</item>
+        <item>Englisch</item>
+        <item>Spanisch</item>
+        <item>Deutsche</item>
+        <item>Französisch</item>
+    </string-array>
 </resources>
