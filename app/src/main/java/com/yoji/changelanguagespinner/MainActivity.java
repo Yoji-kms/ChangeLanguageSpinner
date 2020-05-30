@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
         }
         langSpinner.setSelection(langSpinnerAdapter.getPosition(currentLanguage));
         String currentLocale = getResources().getConfiguration().locale.getLanguage();
-        if (!currentLocale.equals(langSharedPrefs.getString(LOCALE_KEY, ""))) {
+        if (!currentLocale.equals(langSharedPrefs.getString(LOCALE_KEY, "")) && !langSharedPrefs.getString(LOCALE_KEY, "").matches("")) {
             Configuration config = new Configuration();
             config.setLocale(locale);
             getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
