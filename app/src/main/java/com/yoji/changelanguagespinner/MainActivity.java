@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private Locale locale;
     private String chosenLocale;
 
-    private AdapterView.OnItemSelectedListener langSpinnerOnItemClickListener = new AdapterView.OnItemSelectedListener() {
+    private final AdapterView.OnItemSelectedListener langSpinnerOnItemClickListener = new AdapterView.OnItemSelectedListener() {
         @Override
         public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
             switch (position) {
@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
     };
 
 
-    private View.OnClickListener okBtnOnClickListener = new View.OnClickListener() {
+    private final View.OnClickListener okBtnOnClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             if (chosenLocale != null) {
